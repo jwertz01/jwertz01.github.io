@@ -1,0 +1,65 @@
+/* Add your CSS styles here */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header, footer {
+    background-color: #e6e9eb;
+    padding: 1em;
+    text-align: center;
+}
+
+main {
+    padding: 2em;
+}
+
+fieldset {
+    border: 1px solid #ddd;
+    padding: 1em;
+    margin: 1em 0;
+}
+
+legend {
+    font-weight: bold;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+input, select, button {
+    margin-bottom: 1em;
+    padding: 0.5em;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.info_section {
+    background-color: #e4ebf5;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.info_section h2 {
+    margin-top: 0;
+}
+
+#gene_name {
+    width: 70px;
+}
+
+#main_repeat_unit {
+    width: 350px;
+}

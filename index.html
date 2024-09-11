@@ -1,7 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tandem Repeat Visualizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
 <body>
-<h1>Testpage</h1>
-<p>Text</p>
+    <header>
+        <h1>Tandem Repeat Visualizer</h1>
+    </header>
+
+    <main>
+    	<section class="info_section"><p>Online tool to visualize tandem repeats that produces plots such as those shown below. Requires a fasta with sequences closely trimmed around the repeat region.</p></section>
+        <form id="inputForm" action="submit_form.php" method="post">
+            <fieldset>
+                <legend>Basic Parameters</legend>
+                
+                <label for="gene_name">Gene Name:</label>
+                <input type="text" id="gene_name" name="gene_name" required>
+
+                <label for="repeat_seqs">Repeat Sequences (Fasta):</label>
+				<input type="file" id="repeat_seqs" name="repeat_seqs" accept=".fa, .fasta">
+
+                <label for="repeat_type">Repeat Type:</label>
+                <select id="repeat_type" name="repeat_type">
+                    <option value="simple_repeat">Simple Repeat</option>
+                    <option value="vntr">VNTR</option>
+                </select>
+
+                <label for="main_repeat_unit" id="main_repeat_unit_label">Main Repeat Unit:</label>
+                <input type="text" id="main_repeat_unit" name="main_repeat_unit" required>
+                <br/>
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+    </main>
+    <footer>
+        <p>Eichler Lab, 2024</p>
+    </footer>
+    <script src="scripts.js"></script>
 </body>
 </html>
