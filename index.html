@@ -12,13 +12,13 @@
     </header>
 
     <main>
-    	<section class="info_section"><p>Online tool to visualize tandem repeats that produces plots such as those shown below. Requires a fasta with sequences in the repeat region, reverse complemented if necessary to match the repeat pattern.</p></section>
+    	<section class="info_section"><p>Online tool to visualize tandem repeats. Requires a fasta with sequences in the repeat region, reverse complemented if necessary to match the repeat pattern.</p></section>
         <form id="inputForm" action="submit_form.php" method="post">
             <fieldset>
                 <legend>Basic Parameters</legend>
                 
-                <label for="gene_name">Gene Name:</label>
-                <input type="text" id="gene_name" name="gene_name" required>
+                <!--<label for="gene_name">Gene Name:</label>
+                <input type="text" id="gene_name" name="gene_name" required>-->
 
                 <label for="repeat_seqs">Repeat Sequences (Fasta):</label>
 				<input type="file" id="repeat_seqs" name="repeat_seqs" accept=".fa, .fasta">
@@ -37,8 +37,12 @@
         </form>
     </main>
     <footer>
-        <p>Eichler Lab, 2024</p>
+        <p></p>
     </footer>
+    <!--<script src="https://d3js.org/d3.v7.min.js"></script>-->
+    <script type="module">
+        import { times } from 'https://cdn.skypack.dev/lodash-es';
+    </script>
     <script src="scripts.js"></script>
 </body>
 </html>
