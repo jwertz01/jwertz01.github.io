@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (repeatTypeSelect.value === 'vntr') {
             mainRepeatUnitLabel.textContent = 'Repeat Unit Pattern (Regex):';
         } else {
-            mainRepeatUnitLabel.textContent = 'Main Repeat Unit:';
+            mainRepeatUnitLabel.textContent = 'Main Repeat Unit (e.g. CGG):';
         }
     }
 
@@ -83,16 +83,25 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             /// Sort interruptions by count, descending
-            const sortedInterrCounts = Object.entries(interrCounts).sort(
+            let sortedInterrCounts = Object.entries(interrCounts).sort(
                 ([, countA], [, countB]) => countB - countA
             );
             trimmedSeqs.sort((a, b) => b.length - a.length);
 
             let colorMap = new Map();
             colorMap.set(mainRepeatUnit, colorList(0));
+            i = 0
             sortedInterrCounts.forEach(([interr], index) => {
-                colorMap.set(interr, colorList(index + 1));
+                while ([5, 6, 7, 8, 9, 10, 11, 12].includes(i + 1)) { // too similar to other colors
+                    i++;
+                }
+                colorMap.set(interr, colorList(i + 1));
+                i++;
             });
+            // sort by length for string replacement
+            sortedInterrCounts = Object.entries(interrCounts).sort(
+                ([interrA], [interrB]) => interrB.length - interrA.length
+            )
             trimmedSeqs.forEach(trimmedSeq => {
                 trimmedSeq = trimmedSeq.replaceAll(
                     mainRepeatUnit, `<span class="circle" style="color: ${colorMap.get(mainRepeatUnit)}">●</span>`

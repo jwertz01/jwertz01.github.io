@@ -12,7 +12,7 @@
     </header>
 
     <main>
-    	<section class="info_section"><p>Online tool to visualize tandem repeats. Requires a fasta with sequences in the repeat region, reverse complemented if necessary to match the repeat pattern. Example output <a href="https://github.com/jwertz01/jwertz01.github.io/blob/main/assets/hprc_reassembled_fmr1.png" target="_blank">here</a>.</p></section>
+    	<section class="info_section"><p>Online tool to display tandem repeats as trimmed, color-coded repeat units and interruptions. Requires a fasta with sequences in the repeat region, reverse complemented if necessary to match the repeat pattern. Example output: <a href="https://github.com/jwertz01/jwertz01.github.io/blob/main/assets/hprc_reassembled_fmr1.png" target="_blank">Link</a></p></section>
         <form id="inputForm" action="submit_form.php" method="post">
             <fieldset>
                 <legend>Basic Parameters</legend>
@@ -29,7 +29,7 @@
                     <!--<option value="vntr">VNTR</option>-->
                 </select>
 
-                <label for="main_repeat_unit" id="main_repeat_unit_label">Main Repeat Unit:</label>
+                <label for="main_repeat_unit" id="main_repeat_unit_label">Main Repeat Unit (e.g. CGG):</label>
                 <input type="text" id="main_repeat_unit" name="main_repeat_unit" required>
                 <br/>
                 <button type="submit">Submit</button>
